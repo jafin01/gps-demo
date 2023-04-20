@@ -3,7 +3,12 @@ import { useEffect } from 'react';
 import { Marker, useMap } from 'react-leaflet';
 import L from "leaflet";
 
-
+const markerIcon = new L.Icon({
+  iconUrl: "https://cdn-icons-png.flaticon.com/512/9131/9131546.png",
+  iconSize: [35, 35],
+  iconAnchor: [17, 46],
+  popupAnchor: [0, -46],
+});
 
 const RoutingControl = ({ waypoints, router }) => {
 
@@ -11,7 +16,7 @@ const RoutingControl = ({ waypoints, router }) => {
 
     const map = useMap();
 
-    var movingMarker = L.marker([x,y], { interactive: false }).addTo(map);
+    var movingMarker = L.marker([x,y],{icon: markerIcon},{ interactive: false }).addTo(map);
 
     useEffect(() => {
       const routing = L.Routing.control({

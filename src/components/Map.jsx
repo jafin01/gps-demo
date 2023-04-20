@@ -39,8 +39,7 @@ const Map = () => {
   };
 
   return (
-    <>
-      {/* <button onClick={showMyLocation}>Locate Me !</button> */}
+    <>      
       <MapContainer
         center={[28.7041, 77.1025]}
         zoom={10}
@@ -68,10 +67,12 @@ const Map = () => {
             <Marker
               position={startCoords}
               interactive={false}
+              icon={markerIcon}
             ></Marker>
             <Marker
               position={endCoords}
               interactive={false}
+              icon={markerIcon}
             ></Marker>
             <RoutingControl
               waypoints={[startCoords, endCoords]}
