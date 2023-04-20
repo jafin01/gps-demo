@@ -11,7 +11,7 @@ const RoutingControl = ({ waypoints, router }) => {
 
     const map = useMap();
 
-    var movingMarker = L.marker([x,y],{className : "movingmarker"},{ interactive: false }).addTo(map);
+    var movingMarker = L.marker([x,y], { interactive: false }).addTo(map);
 
     useEffect(() => {
       const routing = L.Routing.control({
